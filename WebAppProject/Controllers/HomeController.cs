@@ -12,10 +12,11 @@ namespace WebAppProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private AplicationContext db;
+        public HomeController(ILogger<HomeController> logger, AplicationContext context)
         {
             _logger = logger;
+            db = context;
         }
 
         public IActionResult Index()
@@ -25,6 +26,9 @@ namespace WebAppProject.Controllers
 
         public IActionResult Privacy()
         {
+            db.Positions.Add(new Models.Position() { Location = "Paris" });
+            db.Users.Add(new Models.User() { Name = "Bohdan", Age = 25, });
+            db.SaveChanges();
             return View();
         }
 
