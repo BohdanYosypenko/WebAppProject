@@ -26,9 +26,13 @@ namespace WebAppProject.Controllers
 
         public IActionResult Privacy()
         {
+<<<<<<< HEAD
            
             
             return View();
+=======
+           return View();
+>>>>>>> 6cf93033536c2ec08393b0ce8458c1231820a7df
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
