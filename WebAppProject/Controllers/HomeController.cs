@@ -26,9 +26,8 @@ namespace WebAppProject.Controllers
 
         public IActionResult Privacy()
         {
-            db.Positions.Add(new Models.Position() { Location = "Paris" });
-            db.Users.Add(new Models.User() { Name = "Bohdan", Age = 25, });
-            db.SaveChanges();
+           
+            
             return View();
         }
 
