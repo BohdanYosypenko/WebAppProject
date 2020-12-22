@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -13,15 +14,25 @@ namespace WebAppProject.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private AplicationContext db;
-        public HomeController(ILogger<HomeController> logger, AplicationContext context)
+        UserRepository repo;
+        IMapper mapper;
+
+        public HomeController(ILogger<HomeController> logger, AplicationContext context,IMapper _mapper)
         {
+            repo = new UserRepository(context);
             _logger = logger;
             db = context;
+            mapper = _mapper;
         }
 
-        public IActionResult Index()
+        public ActionResult Index(int x, int y)
         {
-            return View();
+
+            x = 2;
+            y = 3;
+
+                return Content($"{x * y}");
+           
         }
 
         public IActionResult Privacy()
