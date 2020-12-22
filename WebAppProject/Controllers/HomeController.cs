@@ -11,28 +11,17 @@ using WebAppProject.Models;
 namespace WebAppProject.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-        private AplicationContext db;
-        UserRepository repo;
-        IMapper mapper;
-
-        public HomeController(ILogger<HomeController> logger, AplicationContext context,IMapper _mapper)
+    {    
+             
+        public HomeController()       
         {
-            repo = new UserRepository(context);
-            _logger = logger;
-            db = context;
-            mapper = _mapper;
+                        
+                       
         }
 
-        public ActionResult Index(int x, int y)
-        {
-
-            x = 2;
-            y = 3;
-
-                return Content($"{x * y}");
-           
+        public string Index(int x, int y)
+        {            
+            return $"{x * y}";           
         }
 
         public IActionResult Privacy()
