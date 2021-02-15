@@ -10,9 +10,9 @@ namespace Tests
         {
             var home = new HomeController();
 
-            var actual = home.Index(2, 2);
+            var actual = home.Index();
 
-            Assert.Equal("4", actual);
+            Assert.Equal("gggffff", actual);
 
         }
         
