@@ -21,7 +21,7 @@ namespace WebAppProject.Controllers
 
         public string Index()
         {            
-            return $"gggf";           
+            return $"gggffff";           
         }
 
         public IActionResult Privacy()
