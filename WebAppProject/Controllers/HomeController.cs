@@ -19,9 +19,9 @@ namespace WebAppProject.Controllers
                        
         }
 
-        public string Index(int x, int y)
+        public string Index()
         {            
-            return $"{x * y}";           
+            return $"gggf";           
         }
 
         public IActionResult Privacy()
